@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNHEILIG - Offizieller Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- EmailJS für Benachrichtigungen -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>emailjs.init("sxxP29Pol7VasQJ70");</script>
+<style>
+/* ===== RESET & BASIS ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+font-family: 'Montserrat', sans-serif;
+background: #e8dcc8;
+color: #000;
+line-height: 1.6;
+overflow-x: hidden;
+}
+/* ===== TYPOGRAFIE ===== */
+h1, h2, h3, h4 { font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 2px; }
+h1 { font-size: clamp(2rem, 6vw, 3.5rem); margin-bottom: 1rem; }
+h2 { font-size: clamp(1.5rem, 5vw, 2.5rem); margin-bottom: 2rem; text-align: center; }
+h3 { font-size: clamp(1.25rem, 4vw, 1.75rem); margin-bottom: 1rem; }
+p { font-size: clamp(0.875rem, 2.5vw, 1rem); line-height: 1.8; }
+/* ===== HEADER ===== */
+header {
+background: #e8dcc8;
+padding: 1rem;
+border-bottom: 3px solid #000;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1400px;
+margin: 0 auto;
+flex-wrap: wrap;
+}
+.logo {
+font-family: 'Cinzel', serif;
+font-size: clamp(1.5rem, 5vw, 2.5rem);
+font-weight: 700;
+color: #000;
+letter-spacing: 4px;
+text-decoration: none;
+}
+.menu-toggle {
+display: none;
+font-size: 1.8rem;
+background: none;
+border: none;
+color: #000;
+cursor: pointer;
+padding: 0.5rem;
+}
+.nav-links {
+display: flex;
+gap: clamp(0.5rem, 3vw, 2rem);
+list-style: none;
+align-items: center;
+flex-wrap: wrap;
+}
+.nav-links a {
+color: #000;
+text-decoration: none;
+font-weight: 500;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+transition: color 0.3s;
+padding: 0.5rem;
+}
+.nav-links a:hover { color: #c41e3a; }
+.cart-icon { font-size: 1.5rem; cursor: pointer; transition: all 0.3s; }
+.cart-icon:hover { transform: scale(1.1); color: #c41e3a; }
+/* ===== HERO MIT HINTERGRUNDBILD ===== */
+.hero {
+background:
+linear-gradient(135deg, rgba(196, 30, 58, 0.9) 0%, rgba(139, 20, 40, 0.9) 100%),
+url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1200" height="600"%3E%3Cdefs%3E%3ClinearGradient id="grad" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%23c41e3a;stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:%238b1428;stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill="url(%23grad)" width="1200" height="600"/%3E%3C!-- Musiknoten --%3E%3Ctext x="100" y="150" fill="rgba(255,255,255,0.1)" font-size="120" font-family="Arial"%3E♪%3C/text%3E%3Ctext x="300" y="250" fill="rgba(255,255,255,0.08)" font-size="80" font-family="Arial"%3E♫%3C/text%3E%3Ctext x="900" y="200" fill="rgba(255,255,255,0.12)" font-size="100" font-family="Arial"%3E♬%3C/text%3E%3Ctext x="700" y="450" fill="rgba(255,255,255,0.09)" font-size="90" font-family="Arial"%3E♪%3C/text%3E%3C!-- Tickets --%3E%3Crect x="800" y="100" width="120" height="60" fill="rgba(255,255,255,0.15)" rx="5"/%3E%3Ctext x="810" y="135" fill="%23fff" font-size="14" font-family="Arial"%3ETICKET%3C/text%3E%3Crect x="200" y="400" width="100" height="50" fill="rgba(255,255,255,0.12)" rx="5"/%3E%3C!-- Menschenmenge Silhouetten --%3E%3Cellipse cx="150" cy="550" rx="30" ry="50" fill="rgba(0,0,0,0.2)"/%3E%3Cellipse cx="200" cy="560" rx="25" ry="40" fill="rgba(0,0,0,0.15)"/%3E%3Cellipse cx="250" cy="555" rx="28" ry="45" fill="rgba(0,0,0,0.18)"/%3E%3Cellipse cx="300" cy="565" rx="32" ry="55" fill="rgba(0,0,0,0.2)"/%3E%3Cellipse cx="850" cy="550" rx="35" ry="60" fill="rgba(0,0,0,0.22)"/%3E%3Cellipse cx="900" cy="560" rx="28" ry="48" fill="rgba(0,0,0,0.16)"/%3E%3Cellipse cx="950" cy="555" rx="30" ry="52" fill="rgba(0,0,0,0.19)"/%3E%3C/svg%3E');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+padding: clamp(2rem, 8vw, 6rem) 1rem;
+text-align: center;
+color: #fff;
+position: relative;
+overflow: hidden;
+}
+.hero::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1), transparent 60%);
+pointer-events: none;
+}
+.hero h1 {
+color: #fff;
+text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+position: relative;
+z-index: 1;
+}
+.hero p {
+font-size: clamp(1rem, 3vw, 1.25rem);
+max-width: 600px;
+margin: 0 auto;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+position: relative;
+z-index: 1;
+}
+/* ===== CONTAINER ===== */
+.container {
+max-width: 1400px;
+margin: 0 auto;
+padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+}
+section { margin-bottom: clamp(2rem, 6vw, 5rem); }
+/* ===== PRODUKTE GRID ===== */
+.products-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+.product-card {
+background: #f5f0e8;
+border: 3px solid #f7e7e7;
+padding: 1.5rem;
+text-align: center;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(240, 222, 222, 0.15);
+}
+.product-image {
+width: 100%;
+height: auto;
+aspect-ratio: 1;
+object-fit: cover;
+margin-bottom: 1rem;
+border: 2px solid #f3e5e5;
+}
+.product-name {
+font-size: clamp(1rem, 3vw, 1.25rem);
+font-weight: 600;
+margin-bottom: 0.75rem;
+min-height: 2.5rem;
+}
+.product-price {
+font-size: clamp(1.25rem, 4vw, 1.5rem);
+color: #d4af37;
+font-weight: 700;
+margin-bottom: 1rem;
+}
+.quantity-selector {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+margin: 1rem 0;
+}
+.quantity-btn {
+width: 2.5rem;
+height: 2.5rem;
+border: 2px solid #fce8e825;
+background: #e8dcc8;
+color: #d5da90;
+font-size: 1.25rem;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.3s;
+}
+.quantity-btn:hover {
+background: #c41e3a;
+color: #fff;
+border-color: #c41e3a;
+}
+.quantity-display {
+font-size: 1.25rem;
+font-weight: 600;
+min-width: 3rem;
+text-align: center;
+}
+.btn-primary {
+background: #696965;
+color: #252424;
+border: none;
+padding: clamp(0.75rem, 2.5vw, 1rem) 2rem;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+text-transform: uppercase;
+letter-spacing: 1px;
+width: 100%;
+}
+.btn-primary:hover {
+background: #49393b;
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+}
+.btn-primary:disabled {
+background: #999;
+cursor: not-allowed;
+transform: none;
+}
+/* ===== TICKETS GRID ===== */
+.tickets-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+.ticket-card {
+background: #f5f0e8;
+border: 3px solid #f5e3e3;
+padding: 2rem 1.5rem;
+text-align: center;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+.ticket-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.ticket-name {
+font-size: clamp(1.25rem, 4vw, 1.75rem);
+font-weight: 700;
+margin-bottom: 1rem;
+color: #c41e3a;
+}
+.ticket-price-from {
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+color: #666;
+margin-bottom: 0.5rem;
+}
+.ticket-price {
+font-size: clamp(1.75rem, 5vw, 2.25rem);
+color: #d4af37;
+font-weight: 700;
+margin-bottom: 1.5rem;
+}
+.ticket-features {
+list-style: none;
+margin-bottom: 1.5rem;
+text-align: left;
+}
+.ticket-features li {
+padding: 0.75rem 0;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+border-bottom: 1px solid #ccc;
+}
+/* LÄNDERAUSWAHL IN TICKET-KARTE */
+.country-select-group {
+margin: 1.5rem 0;
+}
+.country-select-group label {
+display: block;
+font-weight: 600;
+margin-bottom: 0.5rem;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+.country-select-group select {
+width: 100%;
+padding: clamp(0.75rem, 2.5vw, 1rem);
+border: 2px solid #000;
+background: #e8dcc8;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+font-family: 'Montserrat', sans-serif;
+font-weight: 600;
+cursor: pointer;
+transition: border-color 0.3s;
+}
+.country-select-group select:focus {
+outline: none;
+border-color: #c41e3a;
+}
+.price-info {
+background: #fff;
+border: 2px solid #d4af37;
+padding: 0.75rem;
+margin-top: 1rem;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+/* ===== BUNDLE ===== */
+.bundle-card {
+background: #f5f0e8;
+border: 3px solid #faecec;
+padding: 1.5rem;
+max-width: 600px;
+margin: 2rem auto;
+position: relative;
+}
+.bundle-badge {
+position: absolute;
+top: -1px;
+left: -1px;
+background: #f1e1e1;
+color: #fff;
+padding: 0.5rem 1rem;
+font-size: 0.875rem;
+font-weight: 600;
+text-transform: uppercase;
+}
+.bundle-image {
+width: 100%;
+max-width: 400px;
+height: auto;
+margin: 2rem auto 1.5rem;
+display: block;
+border: 2px solid #000;
+}
+.bundle-dropdown {
+width: 100%;
+padding: 1rem;
+background: #e8dcc8;
+border: 2px solid #000;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+font-family: 'Montserrat', sans-serif;
+margin-bottom: 1.5rem;
+}
+.sold-out {
+text-align: center;
+font-size: clamp(1.25rem, 4vw, 1.5rem);
+font-weight: 700;
+color: #666;
+margin: 1.5rem 0;
+}
+.bundle-title {
+font-size: clamp(1.25rem, 4vw, 1.75rem);
+color: #c41e3a;
+font-weight: 700;
+text-align: center;
+margin: 1rem 0;
+text-transform: uppercase;
+}
+.bundle-info {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1rem;
+margin-top: 1.5rem;
+}
+.info-box {
+background: #fff;
+border: 2px solid #d4af37;
+padding: 1rem;
+text-align: center;
+}
+.info-label {
+font-size: 0.875rem;
+color: #666;
+text-transform: uppercase;
+margin-bottom: 0.5rem;
+}
+.info-value {
+font-size: clamp(1rem, 3vw, 1.25rem);
+font-weight: 700;
+}
+/* ===== FORMULARE ===== */
+.form-group {
+margin-bottom: 1.5rem;
+}
+.form-group label {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: 600;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+width: 100%;
+padding: clamp(0.75rem, 2.5vw, 1rem);
+border: 2px solid #ccc;
+background: #fff;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+font-family: 'Montserrat', sans-serif;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+outline: none;
+border-color: #c41e3a;
+}
+.form-group textarea {
+min-height: 100px;
+resize: vertical;
+}
+.meetgreet-form {
+background: #f5f0e8;
+padding: 1.5rem;
+border: 3px solid #f0e1e1;
+max-width: 800px;
+margin: 2rem auto;
+}
+/* ===== MODAL ===== */
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.8);
+z-index: 2000;
+overflow-y: auto;
+padding: 1rem;
+}
+.modal-content {
+background: #e8dcc8;
+margin: 2rem auto;
+max-width: 600px;
+width: 100%;
+border: 3px solid #000;
+max-height: 90vh;
+overflow-y: auto;
+}
+.modal-header {
+padding: 1.5rem;
+background: #f5f0e8;
+border-bottom: 2px solid #000;
+position: sticky;
+top: 0;
+z-index: 1;
+}
+.modal-header h3 {
+margin: 0;
+font-size: clamp(1.25rem, 4vw, 1.75rem);
+padding-right: 2rem;
+}
+.close-btn {
+position: absolute;
+top: 1rem;
+right: 1rem;
+font-size: 2rem;
+font-weight: 700;
+color: #000;
+cursor: pointer;
+background: none;
+border: none;
+padding: 0;
+line-height: 1;
+}
+.close-btn:hover { color: #c41e3a; }
+.modal-body {
+padding: 1.5rem;
+}
+/* ===== GRÖSSEN GRID ===== */
+.size-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1rem;
+margin: 1.5rem 0;
+}
+.size-option {
+background: #e8dcc8;
+border: 2px solid #000;
+padding: 1rem;
+text-align: center;
+cursor: pointer;
+font-weight: 600;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+transition: all 0.3s;
+}
+.size-option:hover {
+background: #d4af37;
+border-color: #d4af37;
+}
+.size-option.selected {
+background: #c41e3a;
+border-color: #c41e3a;
+color: #fff;
+}
+/* ===== BESTELLÜBERSICHT ===== */
+.order-summary {
+background: #f5f0e8;
+border: 2px solid #000;
+padding: 1.5rem;
+margin-bottom: 1.5rem;
+}
+.order-summary h4 {
+margin-bottom: 1rem;
+font-size: clamp(1rem, 3vw, 1.25rem);
+}
+.summary-line {
+display: flex;
+justify-content: space-between;
+margin-bottom: 0.5rem;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+.summary-total {
+font-size: clamp(1.25rem, 4vw, 1.5rem);
+font-weight: 700;
+color: #d4af37;
+margin-top: 1rem;
+padding-top: 1rem;
+border-top: 2px solid #000;
+}
+/* ===== PAYPAL INFO BEREICH ===== */
+.paypal-section {
+margin-top: 2rem;
+padding-top: 2rem;
+border-top: 2px solid #000;
+}
+.paypal-info {
+background: #fff;
+border: 2px solid #d4af37;
+padding: 1rem;
+margin-bottom: 1.5rem;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+/* ===== FOOTER ===== */
+footer {
+background: #e8dcc8;
+border-top: 3px solid #000;
+padding: 2rem 1rem;
+margin-top: 3rem;
+}
+.footer-content {
+max-width: 1400px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+.footer-section h4 {
+margin-bottom: 1rem;
+font-size: clamp(1rem, 3vw, 1.25rem);
+}
+.footer-section ul {
+list-style: none;
+}
+.footer-section ul li {
+margin-bottom: 0.5rem;
+}
+.footer-section ul li a {
+color: #000;
+text-decoration: none;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+transition: color 0.3s;
+}
+.footer-section ul li a:hover { color: #c41e3a; }
+.footer-bottom {
+text-align: center;
+margin-top: 2rem;
+padding-top: 1.5rem;
+border-top: 2px solid #000;
+font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+}
+/* ===== TOAST ===== */
+.toast {
+position: fixed;
+bottom: 1rem;
+right: 1rem;
+left: 1rem;
+background: #000;
+color: #fff;
+padding: 1rem;
+border-radius: 5px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+z-index: 3000;
+display: none;
+font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+.toast.success { background: #2ecc71; }
+.toast.error { background: #c41e3a; }
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+.products-grid { grid-template-columns: repeat(2, 1fr); }
+.tickets-grid { grid-template-columns: repeat(2, 1fr); }
+.bundle-info { grid-template-columns: repeat(2, 1fr); }
+.footer-content { grid-template-columns: repeat(2, 1fr); }
+.toast { right: 2rem; left: auto; max-width: 400px; }
+}
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+.products-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+.tickets-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+.footer-content { grid-template-columns: repeat(4, 1fr); }
+.size-grid { max-width: 500px; margin-left: auto; margin-right: auto; }
+}
+/* Mobile Menu */
+@media (max-width: 767px) {
+.menu-toggle { display: block; }
+.nav-links {
+display: none;
+flex-direction: column;
+width: 100%;
+background: #e8dcc8;
+padding: 1rem 0;
+gap: 0;
+}
+.nav-links.active {
+display: flex;
+}
+.nav-links li {
+width: 100%;
+text-align: center;
+border-bottom: 1px solid #ccc;
+}
+.nav-links a {
+display: block;
+padding: 1rem;
+}
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header>
+<nav>
+<a href="#" class="logo">UNHEILIG</a>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#shop">Shop</a></li>
+<li><a href="#tickets">Tickets</a></li>
+<li><a href="#bundle">Bundles</a></li>
+<li><a href="#meetgreet">Meet & Greet</a></li>
+<li><span class="cart-icon">🛒</span></li>
+</ul>
+</nav>
+</header>
+<!-- Hero mit Musik/Crowd/Tickets Hintergrund -->
+<section class="hero">
+<h1>WILLKOMMEN</h1>
+<p>Entdecken Sie exklusive Merchandise, Tickets und VIP-Pakete</p>
+</section>
+<!-- Shop -->
+<section id="shop" class="container">
+<h2>OFFIZIELLE MERCHANDISE</h2>
+<div class="products-grid">
+<!-- Produkt 1: Der Graf Tour T-Shirt -->
+<div class="product-card">
+<img src="https://i.ibb.co/QV9KqC5/Der-Graf-Tour-T-Shirt.jpg" alt="Der Graf Tour T-Shirt" class="product-image">
+<div class="product-name">Der Graf Tour T-Shirt</div>
+<div class="product-price">€29,99</div>
+<div class="quantity-selector">
+<button class="quantity-btn" onclick="changeQuantity(this, -1)">−</button>
+<span class="quantity-display">1</span>
+<button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+</div>
+<button class="btn-primary" onclick="openSizeModal(this, 'Der Graf Tour T-Shirt', '29.99')">Jetzt Kaufen</button>
+</div>
+<!-- Produkt 2: Lichtgestalten Hoodie -->
+<div class="product-card">
+<img src="https://i.ibb.co/67YJ9t2g/Lichtgestalten-Hoodie.jpg" alt="Lichtgestalten Hoodie" class="product-image">
+<div class="product-name">Lichtgestalten Hoodie</div>
+<div class="product-price">€54,99</div>
+<div class="quantity-selector">
+<button class="quantity-btn" onclick="changeQuantity(this, -1)">−</button>
+<span class="quantity-display">1</span>
+<button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+</div>
+<button class="btn-primary" onclick="openSizeModal(this, 'Lichtgestalten Hoodie', '54.99')">Jetzt Kaufen</button>
+</div>
+<!-- Produkt 3: Tour 2026 Poster -->
+<div class="product-card">
+<img src="https://i.ibb.co/prsB571G/Whats-App-Image-2026-02-07-at-00-00-51.jpg" alt="Tour 2026 Poster" class="product-image">
+<div class="product-name">Tour 2026 Poster</div>
+<div class="product-price">€19,99</div>
+<div class="quantity-selector">
+<button class="quantity-btn" onclick="changeQuantity(this, -1)">−</button>
+<span class="quantity-display">1</span>
+<button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+</div>
+<button class="btn-primary" onclick="buyNonClothing(this, 'Tour 2026 Poster', '19.99')">Jetzt Kaufen</button>
+</div>
+<!-- Produkt 4: Grosse Freiheit Deluxe CD -->
+<div class="product-card">
+<img src="https://i.ibb.co/q3V6Xmvq/Whats-App-Image-2026-02-07-at-00-00-51-1.jpg" alt="Grosse Freiheit Deluxe CD" class="product-image">
+<div class="product-name">Grosse Freiheit Deluxe CD</div>
+<div class="product-price">€16,99</div>
+<div class="quantity-selector">
+<button class="quantity-btn" onclick="changeQuantity(this, -1)">−</button>
+<span class="quantity-display">1</span>
+<button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+</div>
+<button class="btn-primary" onclick="buyNonClothing(this, 'Grosse Freiheit Deluxe CD', '16.99')">Jetzt Kaufen</button>
+</div>
+<!-- Produkt 5: Collector's Bundle Signiert -->
+<div class="product-card">
+<img src="https://i.ibb.co/0ym62RKj/Whats-App-Image-2026-02-07-at-00-00-52-1.jpg" alt="Collector's Bundle Signiert" class="product-image">
+<div class="product-name">Collector's Bundle Signiert</div>
+<div class="product-price">€99,99</div>
+<div class="quantity-selector">
+<button class="quantity-btn" onclick="changeQuantity(this, -1)">−</button>
+<span class="quantity-display">1</span>
+<button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+</div>
+<button class="btn-primary" onclick="buyNonClothing(this, 'Collector\\'s Bundle Signiert', '99.99')">Jetzt Kaufen</button>
+</div>
+<!-- Produkt 6: Best of Unheilig Vinyl Box -->
+<div class="product-card">
+<img src="https://i.ibb.co/MDmTgCbz/Whats-App-Image-2026-02-07-at-00-00-52.jpg" alt="Best of Unheilig Vinyl Box" class="product-image">
+<div class="product-name">Best of Unheilig Vinyl Box</div>
+<div class="product-price">€79,99</div>
+<div class="quantity-selector">
+<button class="quantity-btn" onclick="changeQuantity(this, -1)">−</button>
+<span class="quantity-display">1</span>
+<button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+</div>
+<button class="btn-primary" onclick="buyNonClothing(this, 'Best of Unheilig Vinyl Box', '79.99')">Jetzt Kaufen</button>
+</div>
+</div>
+</section>
+<!-- Tickets mit Länderauswahl -->
+<section id="tickets" class="container">
+<h2>KONZERT TICKETS</h2>
+<div class="tickets-grid">
+<!-- Standard Ticket -->
+<div class="ticket-card">
+<div class="ticket-name">Standard Ticket</div>
+<div class="ticket-price-from">Ab</div>
+<div class="ticket-price" id="standardPrice">€59,00</div>
+<ul class="ticket-features">
+<li>✓ Allgemeiner Einlass</li>
+<li>✓ Konzertprogramm</li>
+</ul>
+<div class="country-select-group">
+<label>Land wählen:</label>
+<select onchange="updateTicketPrice(this, 'standard', 59.00)" class="ticket-country-select">
+<option value="Deutschland" data-shipping="5.95">Deutschland (+€5,95)</option>
+<option value="Österreich" data-shipping="9.95">Österreich (+€9,95)</option>
+<option value="Schweiz" data-shipping="17.95">Schweiz (+€17,95)</option>
+<option value="Belgien" data-shipping="9.95">Belgien (+€9,95)</option>
+<option value="Dänemark" data-shipping="12.95">Dänemark (+€12,95)</option>
+<option value="Finnland" data-shipping="15.95">Finnland (+€15,95)</option>
+<option value="Frankreich" data-shipping="12.95">Frankreich (+€12,95)</option>
+<option value="Niederlande" data-shipping="8.95">Niederlande (+€8,95)</option>
+</select>
+</div>
+<div class="price-info">
+<strong>Gesamtpreis: <span id="standardTotal">€64,95</span></strong><br>
+<small>(inkl. Versand nach Deutschland)</small>
+</div>
+<div class="quantity-selector">
+<button class="quantity-btn" onclick="changeQuantity(this, -1)">−</button>
+<span class="quantity-display">1</span>
+<button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+</div>
+<button class="btn-primary" onclick="openTicketCheckout(this, 'Standard Ticket', 'standard')">Jetzt Buchen</button>
+</div>
+<!-- VIP Ticket -->
+<div class="ticket-card">
+<div class="ticket-name">VIP Ticket</div>
+<div class="ticket-price-from">Ab</div>
+<div class="ticket-price" id="vipPrice">€149,00</div>
+<ul class="ticket-features">
+<li>✓ Bevorzugter Einlass</li>
+<li>✓ Premium Sitzplatz</li>
+<li>✓ Exklusive Merchandise</li>
+<li>✓ Signiertes Programm</li>
+<li>✓ VIP Lanyard</li>
+</ul>
+<div class="country-select-group">
+<label>Land wählen:</label>
+<select onchange="updateTicketPrice(this, 'vip', 149.00)" class="ticket-country-select">
+<option value="Deutschland" data-shipping="5.95">Deutschland (+€5,95)</option>
+<option value="Österreich" data-shipping="9.95">Österreich (+€9,95)</option>
+<option value="Schweiz" data-shipping="17.95">Schweiz (+€17,95)</option>
+<option value="Belgien" data-shipping="9.95">Belgien (+€9,95)</option>
+<option value="Dänemark" data-shipping="12.95">Dänemark (+€12,95)</option>
+<option value="Finnland" data-shipping="15.95">Finnland (+€15,95)</option>
+<option value="Frankreich" data-shipping="12.95">Frankreich (+€12,95)</option>
+<option value="Niederlande" data-shipping="8.95">Niederlande (+€8,95)</option>
+</select>
+</div>
+<div class="price-info">
+<strong>Gesamtpreis: <span id="vipTotal">€154,95</span></strong><br>
+<small>(inkl. Versand nach Deutschland)</small>
+</div>
+<div class="quantity-selector">
+<button class="quantity-btn" onclick="changeQuantity(this, -1)">−</button>
+<span class="quantity-display">1</span>
+<button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+</div>
+<button class="btn-primary" onclick="openTicketCheckout(this, 'VIP Ticket', 'vip')">Jetzt Buchen</button>
+</div>
+<!-- Backstage Pass -->
+<div class="ticket-card">
+<div class="ticket-name">Backstage Pass</div>
+<div class="ticket-price-from">Ab</div>
+<div class="ticket-price" id="backstagePrice">€299,00</div>
+<ul class="ticket-features">
+<li>✓ Alle VIP Vorteile</li>
+<li>✓ Backstage Tour</li>
+<li>✓ Soundcheck Zugang</li>
+<li>✓ Meet & Greet</li>
+<li>✓ Foto-Möglichkeit</li>
+<li>✓ Limitierte Merchandise</li>
+</ul>
+<div class="country-select-group">
+<label>Land wählen:</label>
+<select onchange="updateTicketPrice(this, 'backstage', 299.00)" class="ticket-country-select">
+<option value="Deutschland" data-shipping="5.95">Deutschland (+€5,95)</option>
+<option value="Österreich" data-shipping="9.95">Österreich (+€9,95)</option>
+<option value="Schweiz" data-shipping="17.95">Schweiz (+€17,95)</option>
+<option value="Belgien" data-shipping="9.95">Belgien (+€9,95)</option>
+<option value="Dänemark" data-shipping="12.95">Dänemark (+€12,95)</option>
+<option value="Finnland" data-shipping="15.95">Finnland (+€15,95)</option>
+<option value="Frankreich" data-shipping="12.95">Frankreich (+€12,95)</option>
+<option value="Niederlande" data-shipping="8.95">Niederlande (+€8,95)</option>
+</select>
+</div>
+<div class="price-info">
+<strong>Gesamtpreis: <span id="backstageTotal">€304,95</span></strong><br>
+<small>(inkl. Versand nach Deutschland)</small>
+</div>
+<div class="quantity-selector">
+<button class="quantity-btn" onclick="changeQuantity(this, -1)">−</button>
+<span class="quantity-display">1</span>
+<button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+</div>
+<button class="btn-primary" onclick="openTicketCheckout(this, 'Backstage Pass', 'backstage')">Jetzt Buchen</button>
+</div>
+</div>
+</section>
+<!-- Bundle mit neuem Ticket-Bild -->
+<section id="bundle" class="container">
+<h2>EXKLUSIVE BUNDLES</h2>
+<div class="bundle-card">
+<div class="bundle-badge"></div>
+<img src="<a href="https://imgbb.com/"><img src="https://i.ibb.co/KxtxfFBV/bundel.jpg" alt="bundel" border="0" /></a>
+<select class="bundle-dropdown">
+<option>14.11.26 - Bremen</option>
+<option>15.11.26 - Hamburg</option>
+<option>16.11.26 - Berlin</option>
+<option>17.11.26 - Leipzig</option>
+<option>18.11.26 - Dresden</option>
+<option>20.11.26 - München</option>
+<option>21.11.26 - Stuttgart</option>
+<option>22.11.26 - Frankfurt</option>
+<option>23.11.26 - Köln</option>
+<option>24.11.26 - Dortmund</option>
+</select>
+<div class="sold-out">Leider ausverkauft</div>
+<div class="bundle-title">LIEBE GLAUBE MONSTER<br>CD + 2 TICKETS BUNDLE</div>
+<div class="bundle-info">
+<div class="info-box">
+<div class="info-label">Zwischensumme</div>
+<div class="info-value">€195,99</div>
+</div>
+<div class="info-box">
+<div class="info-label">Status</div>
+<div class="info-value">Ausverkauft</div>
+</div>
+</div>
+<p style="text-align: center; margin-top: 1rem; font-size: 0.875rem;">inkl. MwSt (ggf zzgl. Versandkosten)</p>
+</div>
+</section>
+<!-- Meet & Greet -->
+<section id="meetgreet" class="container">
+<h2>MEET & GREET BUCHUNG</h2>
+<form class="meetgreet-form" onsubmit="submitMeetGreet(event)">
+<div class="form-group">
+<label>Vorname *</label>
+<input type="text" id="mgFirstName" required>
+</div>
+<div class="form-group">
+<label>Nachname *</label>
+<input type="text" id="mgLastName" required>
+</div>
+<div class="form-group">
+<label>E-Mail *</label>
+<input type="email" id="mgEmail" required>
+</div>
+<div class="form-group">
+<label>Telefon *</label>
+<input type="tel" id="mgPhone" required>
+</div>
+<div class="form-group">
+<label>Tour Datum *</label>
+<select id="mgDate" required>
+<option value="">Bitte wählen...</option>
+<option>März 2026 - Berlin</option>
+<option>März 2026 - München</option>
+<option>März 2026 - Hamburg</option>
+<option>April 2026 - Köln</option>
+<option>April 2026 - Frankfurt</option>
+<option>April 2026 - Stuttgart</option>
+</select>
+</div>
+<div class="form-group">
+<label>Anzahl Personen (max. 2) *</label>
+<div class="quantity-selector">
+<button type="button" class="quantity-btn" onclick="changeQuantity(this, -1)">−</button>
+<span class="quantity-display">1</span>
+<button type="button" class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+</div>
+</div>
+<div class="form-group">
+<label>Besondere Nachricht (optional)</label>
+<textarea id="mgMessage" rows="4"></textarea>
+</div>
+<div class="paypal-section">
+<div class="paypal-info">
+<p><strong>Meet & Greet Preis: €399,00 pro Person</strong></p>
+<p>Nach Absenden erhalten Sie eine E-Mail mit einem PayPal-Zahlungslink.</p>
+</div>
+<button type="submit" class="btn-primary">PayPal-Link Anfordern</button>
+</div>
+</form>
+</section>
+<!-- Footer -->
+<footer>
+<div class="footer-content">
+<div class="footer-section">
+<h4>SHOP</h4>
+<ul>
+<li><a href="#shop">Merchandise</a></li>
+<li><a href="#">Limited Edition</a></li>
+<li><a href="#bundle">Bundles</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>TICKETS</h4>
+<ul>
+<li><a href="#tickets">Konzerte</a></li>
+<li><a href="#tickets">VIP Pakete</a></li>
+<li><a href="#meetgreet">Meet & Greet</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>SERVICE</h4>
+<ul>
+<li><a href="#">Kontakt</a></li>
+<li><a href="#">Support</a></li>
+<li><a href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>RECHTLICHES</h4>
+<ul>
+<li><a href="#">Impressum</a></li>
+<li><a href="#">Datenschutz</a></li>
+<li><a href="#">AGB</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+© 2026 Unheilig Official Store. Alle Rechte vorbehalten.
+</div>
+</footer>
+<!-- Größenauswahl Modal -->
+<div id="sizeModal" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3>Größe wählen</h3>
+<button class="close-btn" onclick="closeModal('sizeModal')">&times;</button>
+</div>
+<div class="modal-body">
+<p style="margin-bottom: 1.5rem;">Bitte wählen Sie Ihre gewünschte Größe:</p>
+<div class="order-summary">
+<h4>Ihre Auswahl</h4>
+<div class="summary-line">
+<span id="sizeSummaryProduct">Produkt</span>
+<span id="sizeSummaryQty">x1</span>
+</div>
+<div class="summary-total" id="sizeSummaryTotal">€0,00</div>
+</div>
+<div class="size-grid">
+<div class="size-option" onclick="selectSize(this, 'S')">S</div>
+<div class="size-option" onclick="selectSize(this, 'M')">M</div>
+<div class="size-option" onclick="selectSize(this, 'L')">L</div>
+<div class="size-option" onclick="selectSize(this, 'XL')">XL</div>
+<div class="size-option" onclick="selectSize(this, 'XXL')">XXL</div>
+<div class="size-option" onclick="selectSize(this, '3XL')">3XL</div>
+<div class="size-option" onclick="selectSize(this, '4XL')">4XL</div>
+<div class="size-option" onclick="selectSize(this, '5XL')">5XL</div>
+</div>
+<button class="btn-primary" id="proceedSizeBtn" onclick="proceedToCheckout()" disabled>Weiter zum Formular</button>
+</div>
+</div>
+</div>
+<!-- Checkout Modal (Merchandise) -->
+<div id="checkoutModal" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3>Bestellung - Merchandise</h3>
+<button class="close-btn" onclick="closeModal('checkoutModal')">&times;</button>
+</div>
+<div class="modal-body">
+<div class="order-summary">
+<h4>Ihre Bestellung</h4>
+<div class="summary-line">
+<span id="checkoutProduct">Produkt</span>
+<span id="checkoutQty">x1</span>
+</div>
+<div class="summary-total" id="checkoutTotal">€0,00</div>
+</div>
+<form id="checkoutForm" onsubmit="submitMerchandise(event)">
+<div class="form-group">
+<label>Vorname *</label>
+<input type="text" id="firstName" required>
+</div>
+<div class="form-group">
+<label>Nachname *</label>
+<input type="text" id="lastName" required>
+</div>
+<div class="form-group">
+<label>E-Mail *</label>
+<input type="email" id="email" required>
+</div>
+<div class="form-group">
+<label>Telefon *</label>
+<input type="tel" id="phone" required>
+</div>
+<div class="form-group">
+<label>Straße & Hausnummer *</label>
+<input type="text" id="address" required>
+</div>
+<div class="form-group">
+<label>Postleitzahl *</label>
+<input type="text" id="zip" required>
+</div>
+<div class="form-group">
+<label>Stadt *</label>
+<input type="text" id="city" required>
+</div>
+<div class="form-group">
+<label>Land *</label>
+<select id="country" required>
+<option value="">Bitte wählen...</option>
+<option>Deutschland</option>
+<option>Österreich</option>
+<option>Schweiz</option>
+<option>Belgien</option>
+<option>Luxemburg</option>
+<option>Niederlande</option>
+<option>Frankreich</option>
+</select>
+</div>
+<div class="paypal-section">
+<div class="paypal-info">
+<p>Nach Absenden erhalten Sie eine E-Mail mit einem PayPal-Zahlungslink.</p>
+</div>
+<button type="submit" class="btn-primary">PayPal-Link Anfordern</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Checkout Modal (Tickets) -->
+<div id="ticketCheckoutModal" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3>Bestellung - Tickets</h3>
+<button class="close-btn" onclick="closeModal('ticketCheckoutModal')">&times;</button>
+</div>
+<div class="modal-body">
+<div class="order-summary">
+<h4>Ihre Bestellung</h4>
+<div class="summary-line">
+<span id="ticketProduct">Ticket</span>
+<span id="ticketQty">x1</span>
+</div>
+<div class="summary-line">
+<span>Versand nach:</span>
+<span id="ticketShippingCountry">Deutschland</span>
+</div>
+<div class="summary-line">
+<span>Versandkosten:</span>
+<span id="ticketShipping">€5,95</span>
+</div>
+<div class="summary-total" id="ticketTotal">€0,00</div>
+</div>
+<form id="ticketForm" onsubmit="submitTicket(event)">
+<div class="form-group">
+<label>Vorname *</label>
+<input type="text" id="ticketFirstName" required>
+</div>
+<div class="form-group">
+<label>Nachname *</label>
+<input type="text" id="ticketLastName" required>
+</div>
+<div class="form-group">
+<label>E-Mail *</label>
+<input type="email" id="ticketEmail" required>
+</div>
+<div class="form-group">
+<label>Telefon *</label>
+<input type="tel" id="ticketPhone" required>
+</div>
+<div class="form-group">
+<label>Straße & Hausnummer *</label>
+<input type="text" id="ticketAddress" required>
+</div>
+<div class="form-group">
+<label>Postleitzahl *</label>
+<input type="text" id="ticketZip" required>
+</div>
+<div class="form-group">
+<label>Stadt *</label>
+<input type="text" id="ticketCity" required>
+</div>
+<div class="paypal-section">
+<div class="paypal-info">
+<p>Nach Absenden erhalten Sie eine E-Mail mit einem PayPal-Zahlungslink für Ihre Tickets.</p>
+</div>
+<button type="submit" class="btn-primary">PayPal-Link Anfordern</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+<script>
+// ===== GLOBALE VARIABLEN =====
+let currentProduct = {};
+let selectedSize = '';
+let ticketPrices = {
+standard: { base: 59.00, shipping: 5.95, country: 'Deutschland' },
+vip: { base: 149.00, shipping: 5.95, country: 'Deutschland' },
+backstage: { base: 299.00, shipping: 5.95, country: 'Deutschland' }
+};
+// ===== MENÜ TOGGLE =====
+function toggleMenu() {
+document.getElementById('navLinks').classList.toggle('active');
+}
+// ===== MENGE ÄNDERN =====
+function changeQuantity(btn, delta) {
+const display = btn.parentElement.querySelector('.quantity-display');
+let qty = parseInt(display.textContent);
+qty = Math.max(1, Math.min(20, qty + delta));
+display.textContent = qty;
+}
+// ===== TICKET PREIS AKTUALISIEREN =====
+function updateTicketPrice(selectElement, ticketType, basePrice) {
+const selectedOption = selectElement.options[selectElement.selectedIndex];
+const shipping = parseFloat(selectedOption.getAttribute('data-shipping'));
+const country = selectedOption.value;
+const total = basePrice + shipping;
+// Preis speichern
+ticketPrices[ticketType] = {
+base: basePrice,
+shipping: shipping,
+country: country
+};
+// Anzeige aktualisieren
+document.getElementById(ticketType + 'Total').textContent = '€' + total.toFixed(2);
+// Versandinfo aktualisieren
+const priceInfo = selectElement.parentElement.nextElementSibling;
+priceInfo.querySelector('small').textContent = `(inkl. Versand nach ${country})`;
+}
+// ===== GRÖSSENAUSWAHL ÖFFNEN =====
+function openSizeModal(btn, product, price) {
+const qty = btn.parentElement.querySelector('.quantity-display').textContent;
+currentProduct = { product, price, qty };
+document.getElementById('sizeSummaryProduct').textContent = product;
+document.getElementById('sizeSummaryQty').textContent = `x${qty}`;
+document.getElementById('sizeSummaryTotal').textContent = `€${(parseFloat(price) * parseInt(qty)).toFixed(2)}`;
+document.getElementById('sizeModal').style.display = 'block';
+document.body.style.overflow = 'hidden';
+}
+// ===== GRÖSSE AUSWÄHLEN =====
+function selectSize(element, size) {
+document.querySelectorAll('.size-option').forEach(el => el.classList.remove('selected'));
+element.classList.add('selected');
+selectedSize = size;
+document.getElementById('proceedSizeBtn').disabled = false;
+}
+// ===== ZUM CHECKOUT =====
+function proceedToCheckout() {
+closeModal('sizeModal');
+document.getElementById('checkoutProduct').textContent = currentProduct.product;
+document.getElementById('checkoutQty').textContent = `x${currentProduct.qty} (Größe: ${selectedSize})`;
+document.getElementById('checkoutTotal').textContent = `€${(parseFloat(currentProduct.price) * parseInt(currentProduct.qty)).toFixed(2)}`;
+document.getElementById('checkoutModal').style.display = 'block';
+}
+// ===== NICHT-KLEIDUNG KAUFEN =====
+function buyNonClothing(btn, product, price) {
+const qty = btn.parentElement.querySelector('.quantity-display').textContent;
+currentProduct = { product, price, qty };
+document.getElementById('checkoutProduct').textContent = product;
+document.getElementById('checkoutQty').textContent = `x${qty}`;
+document.getElementById('checkoutTotal').textContent = `€${(parseFloat(price) * parseInt(qty)).toFixed(2)}`;
+document.getElementById('checkoutModal').style.display = 'block';
+document.body.style.overflow = 'hidden';
+}
+// ===== TICKET CHECKOUT ÖFFNEN =====
+function openTicketCheckout(btn, ticketName, ticketType) {
+const qty = btn.parentElement.querySelector('.quantity-display').textContent;
+const prices = ticketPrices[ticketType];
+const ticketTotal = prices.base * parseInt(qty);
+const shippingTotal = prices.shipping;
+const grandTotal = ticketTotal + shippingTotal;
+currentProduct = {
+product: ticketName,
+price: prices.base,
+qty: qty,
+country: prices.country,
+shipping: prices.shipping
+};
+document.getElementById('ticketProduct').textContent = `${qty}x ${ticketName}`;
+document.getElementById('ticketQty').textContent = '';
+document.getElementById('ticketShippingCountry').textContent = prices.country;
+document.getElementById('ticketShipping').textContent = `€${shippingTotal.toFixed(2)}`;
+document.getElementById('ticketTotal').textContent = `€${grandTotal.toFixed(2)}`;
+document.getElementById('ticketCheckoutModal').style.display = 'block';
+document.body.style.overflow = 'hidden';
+}
+// ===== MODAL SCHLIESSEN =====
+function closeModal(id) {
+document.getElementById(id).style.display = 'none';
+document.body.style.overflow = 'auto';
+}
+// ===== TOAST ANZEIGEN =====
+function showToast(message, type = 'success') {
+const toast = document.getElementById('toast');
+toast.textContent = message;
+toast.className = `toast ${type}`;
+toast.style.display = 'block';
+setTimeout(() => {
+toast.style.display = 'none';
+}, 3000);
+}
+// ===== MERCHANDISE BESTELLUNG ABSENDEN =====
+async function submitMerchandise(e) {
+e.preventDefault();
+const form = e.target;
+const data = {
+firstName: form[0].value,
+lastName: form[1].value,
+email: form[2].value,
+phone: form[3].value,
+orderType: 'Merchandise Bestellung - PayPal Link Angefordert',
+orderDetails: `${currentProduct.qty}x ${currentProduct.product}${selectedSize ? ' (Größe: ' + selectedSize + ')' : ''}`,
+total: (parseFloat(currentProduct.price) * parseInt(currentProduct.qty)).toFixed(2),
+address: form[4].value,
+zip: form[5].value,
+city: form[6].value,
+country: form[7].value
+};
+try {
+await emailjs.send('service_lxiogfo', 'template_xpry7ok', data);
+closeModal('checkoutModal');
+showToast('Ihre Anfrage wurde gesendet! Sie erhalten in Kürze den PayPal-Link per E-Mail.', 'success');
+form.reset();
+} catch (error) {
+showToast('Fehler beim Senden. Bitte versuchen Sie es erneut.', 'error');
+}
+}
+// ===== TICKET BESTELLUNG ABSENDEN =====
+async function submitTicket(e) {
+e.preventDefault();
+const form = e.target;
+const ticketPrice = parseFloat(currentProduct.price) * parseInt(currentProduct.qty);
+const shippingCost = parseFloat(currentProduct.shipping);
+const total = ticketPrice + shippingCost;
+const data = {
+firstName: form[0].value,
+lastName: form[1].value,
+email: form[2].value,
+phone: form[3].value,
+orderType: 'Ticket Bestellung - PayPal Link Angefordert',
+orderDetails: `${currentProduct.qty}x ${currentProduct.product} + Versand nach ${currentProduct.country} (€${currentProduct.shipping.toFixed(2)})`,
+total: total.toFixed(2),
+address: form[4].value,
+zip: form[5].value,
+city: form[6].value,
+country: currentProduct.country
+};
+try {
+await emailjs.send('service_lxiogfo', 'template_xpry7ok', data);
+closeModal('ticketCheckoutModal');
+showToast('Ihre Ticket-Anfrage wurde gesendet! Sie erhalten in Kürze den PayPal-Link per E-Mail.', 'success');
+form.reset();
+} catch (error) {
+showToast('Fehler beim Senden. Bitte versuchen Sie es erneut.', 'error');
+}
+}
+// ===== MEET & GREET ABSENDEN =====
+async function submitMeetGreet(e) {
+e.preventDefault();
+const form = e.target;
+const persons = form.querySelector('.quantity-display').textContent;
+const total = 399.00 * parseInt(persons);
+const data = {
+firstName: document.getElementById('mgFirstName').value,
+lastName: document.getElementById('mgLastName').value,
+email: document.getElementById('mgEmail').value,
+phone: document.getElementById('mgPhone').value,
+orderType: 'Meet & Greet Anfrage - PayPal Link Angefordert',
+tourDate: document.getElementById('mgDate').value,
+persons: persons,
+message: document.getElementById('mgMessage').value || 'Keine Nachricht',
+total: total.toFixed(2)
+};
+try {
+await emailjs.send('service_lxiogfo', 'template_xpry7ok', data);
+showToast('Ihre Meet & Greet Anfrage wurde gesendet! Sie erhalten in Kürze den PayPal-Link per E-Mail.', 'success');
+form.reset();
+} catch (error) {
+showToast('Fehler beim Senden. Bitte versuchen Sie es erneut.', 'error');
+}
+}
+// ===== MODAL AUSSERHALB KLICKEN =====
+window.onclick = function(event) {
+if (event.target.classList.contains('modal')) {
+event.target.style.display = 'none';
+document.body.style.overflow = 'auto';
+}
+}
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+if (window.innerWidth < 768) {
+document.getElementById('navLinks').classList.remove('active');
+}
+}
+});
+});
+</script>
+</body>
+</html>
